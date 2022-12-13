@@ -1,30 +1,34 @@
 #include <stdio.h>
 /**
-* main - Prints numbers between 0 to 9 and letters between a to f.
-*
-* Return: Always 0 (Success)
-*/
+ * main - prints all combinations of three digits with,
+ * and space followed by new line
+ *
+ * Return: returns 0
+ */
 int main(void)
 {
-int ones = '0';
-int tens = '0';
-for (tens = '0'; tens <= '9'; tens++)
-{
-for (ones = '0'; ones <= '9'; ones++)
-{
-if (!((ones == tens) || (tens > ones)))
-{
-putchar(tens);
-putchar(ones);
-if (!(ones == '9' && tens == '8'))
-{
-putchar(',');
-putchar(' ');
-}
-}
-}
-}
-putchar('\n');
-return (0);
-}
+        int hund;
+        int tens;
+        int ones;
 
+        for (hund = 0; hund <= 9; hund++)
+        {
+                for (tens = hund + 1; tens <= 9; tens++)
+                {
+                        for (ones = tens + 1; ones <= 9; ones++)
+                        {
+                                putchar(hund + '0');
+                                putchar(tens + '0');
+                                putchar(ones + '0');
+
+                                if (hund < 7)
+                                {
+                                        putchar(',');
+                                        putchar(' ');
+                                }
+                        }
+                }
+        }
+        putchar('\n');
+        return (0);
+}
