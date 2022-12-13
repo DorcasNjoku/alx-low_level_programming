@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-* main - Prints numbers between 0 to 9 and letters between a to f.
+* main - Prints numbers between 0 to 9 with commas and spaces.
 *
 * Return: Always 0 (Success)
 */
@@ -10,11 +10,13 @@ int i;
 for (i = 48; i < 58; i++)
 {
 putchar(i);
-}
-for (i = 97; i < 103; i++)
+if (i != 57)
 {
-putchar(i);
+putchar(',');
+putchar(' ');
+}
 }
 putchar('\n');
 return (0);
 }
+
